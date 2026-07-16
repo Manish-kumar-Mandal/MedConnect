@@ -1,0 +1,812 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(360deg, #edf6ff, #b3d0f7);
+}
+
+/* Navbar section */
+
+
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: sans-serif;
+}
+
+.logo img {
+    width: 250px;
+    height: 60px;
+}
+
+.items .active {
+    color: #0052d4;
+}
+
+.items {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+}
+
+.items li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.items li a:hover {
+    color: #2563eb;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.login {
+    padding: 12px 28px;
+    border: 2px solid #2563eb;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.login:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    padding: 12px 28px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .3s;
+
+}
+
+.register:hover {
+    background: #0d47c8;
+}
+
+
+/* form section  */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 3vh 20vw;
+    width: 30vw;
+    height: 85vh;
+    position: relative;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+
+
+}
+
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.heading h3 {
+    color: #0052d4;
+    font-weight: 600;
+    font-family: "poppins";
+}
+
+.heading span {
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "poppins";
+}
+
+.heading p {
+    color: gray;
+    font-family: "baloo bhai 2";
+
+}
+
+.inputbox {
+    position: relative;
+    text-align: center;
+}
+
+.inputbox input {
+    width: 450px;
+    font-size: 20px;
+    padding: 15px 40px;
+    outline: none;
+    color: grey;
+    border: 1px solid #ddd;
+    margin: 12px 0;
+    border-radius: 12px;
+}
+
+.inputbox i {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    font-size: 19px;
+    color: #0052d4;
+}
+
+.login-foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    z-index: 10;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options label {
+    font-family: "poppins";
+    margin-left: 15px;
+}
+
+.options a {
+    text-decoration: none;
+    font-family: "poppins";
+    color: #0052d4;
+    font-weight: 500;
+}
+
+.lgn-btn {
+    padding: 12px 153px;
+    margin-top: 22px;
+    font-size: 23px;
+    border: none;
+    color: white;
+    background-color: #0052d4;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.icon {
+    padding: 12px 10px;
+    font-size: 18px;
+    border: none;
+    border: 2px solid #ddd;
+    background-color: transparent;
+    border-radius: 9px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.google-lnk {
+    color: red;
+}
+
+.facebook-lnk {
+    color: blue;
+}
+
+
+
+.foot-ico {
+    display: flex;
+    gap: 20px;
+}
+
+.foot-ico a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.dnt-acc {
+    font-size: 18px;
+    color: rgb(43, 39, 39);
+}
+
+.dnt-acc a {
+    text-decoration: none;
+    color: #0052d4;
+    font-weight: 600;
+    font-family: "baloo bhai 2";
+}
+
+.divider span {
+    color: gray;
+}
+
+
+.right {
+    background: linear-gradient(135deg, #2563eb, #4f9cff);
+    width: 30vw;
+    height: 85vh;
+    position: absolute;
+    right: -576px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+
+}
+
+.right img {
+    height: 700px;
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    z-index: 1;
+}
+
+
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    width: 450px;
+    margin: 0 50px;
+    margin-bottom: 12px;
+    gap: 32px;
+    font-family: "poppins";
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.card i {
+    color: #2563eb;
+    font-size: 34px;
+}
+
+
+
+/* footer section */
+
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(200, 197, 197);
+    background-color: rgba(4, 4, 53, 0.855);
+    padding-bottom: 20px;
+
+}
+
+.foot-container li {
+    list-style: none;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+
+.foot-container h3 {
+    margin-bottom: 20px;
+}
+
+.first-section img {
+    width: 270px;
+    margin: 17px 38px;
+}
+
+.first-section p {
+    margin-left: 70px;
+    font-size: 20px;
+    font-family: serif;
+    color: rgb(222, 213, 213);
+    line-height: 27px;
+}
+
+.social-ico {
+    margin-left: 70px;
+    padding: 26px 0;
+
+}
+
+.fa-linkedin:hover {
+    color: rgb(11, 93, 199);
+}
+
+.fa-facebook:hover {
+    color: blue;
+}
+
+.fa-instagram:hover {
+    color: palevioletred;
+}
+
+.fa-twitter:hover {
+    color: cyan;
+}
+
+.social-ico a {
+    color: white;
+}
+
+.social-ico i {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 7px;
+    font-size: 15px;
+    margin: 0 4px;
+}
+
+.second-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.second-section a {
+    color: rgb(200, 197, 197);
+    text-decoration: none;
+}
+
+.third-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.fourth-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.fifth-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+    margin-right: 240px;
+}
+
+.fifth-section i {
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+
+/* copyright section */
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: gray;
+}
+
+
+.copyright {
+    background-color: rgba(4, 4, 53, 0.855);
+    color: rgb(201, 198, 198);
+    padding: 12px;
+    display: flex;
+    font-family: "poppins";
+    justify-content: space-between;
+
+}
+
+
+
+
+@media (max-width:1600px) {
+
+    .form-container {
+        width: 620px;
+        margin: 40px 0 40px 8%;
+        height: auto;
+        min-height: 720px;
+    }
+
+    .right {
+        width: 620px;
+        height: 720px;
+        right: -620px;
+    }
+
+
+    .inputbox input {
+        width: 420px;
+    }
+
+
+    .lgn-btn {
+        padding: 12px 135px;
+    }
+
+
+    .card {
+        width: 400px;
+        margin-left: 40px;
+    }
+
+
+    .right img {
+        height: 620px;
+        right: -170px;
+    }
+
+
+    .fifth-section {
+        margin-right: 80px;
+    }
+
+}
+
+
+@media (max-width:1400px) {
+
+    nav {
+        padding: 0 40px;
+    }
+
+
+    .logo img {
+        width: 220px;
+    }
+
+
+    .form-container {
+        width: 550px;
+        margin-left: 5%;
+    }
+
+
+    .right {
+        width: 550px;
+        right: -550px;
+    }
+
+
+    .inputbox input {
+        width: 380px;
+        font-size: 18px;
+    }
+
+
+    .heading span {
+        font-size: 30px;
+    }
+
+
+    .lgn-btn {
+        padding: 12px 110px;
+        font-size: 20px;
+    }
+
+
+    .card {
+        width: 350px;
+        margin-left: 35px;
+    }
+
+
+    .card i {
+        font-size: 28px;
+    }
+
+
+    .right img {
+        height: 560px;
+        right: -150px;
+    }
+
+
+    .foot-container {
+        flex-wrap: wrap;
+        padding: 20px 40px;
+        gap: 30px;
+    }
+
+
+    .fifth-section {
+        margin-right: 0;
+    }
+
+}
+
+
+
+@media (max-width:1200px) {
+
+
+    .form-container {
+        width: 90%;
+        margin: 40px auto;
+        border-radius: 40px;
+        height: auto;
+        padding: 40px 0;
+    }
+
+
+    .right {
+        display: none;
+    }
+
+
+    .inputbox input {
+        width: 500px;
+    }
+
+
+    .foot-container {
+        justify-content: space-around;
+    }
+
+}
+
+
+
+@media(max-width:992px) {
+
+
+    nav {
+        padding: 0 25px;
+    }
+
+
+    .logo img {
+        width: 200px;
+    }
+
+
+    .buttons a {
+        padding: 10px 18px;
+    }
+
+
+    .form-container {
+        width: 90%;
+    }
+
+
+    .inputbox input {
+        width: 450px;
+    }
+
+
+    .foot-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+
+
+    .first-section {
+        grid-column: span 2;
+    }
+
+}
+
+
+
+@media(max-width:768px) {
+
+
+    body {
+        height: auto;
+    }
+
+
+    nav {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+
+    .logo img {
+        width: 160px;
+        height: auto;
+    }
+
+
+    .buttons {
+        gap: 8px;
+    }
+
+
+    .buttons a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+
+
+    .form-container {
+
+        width: 92%;
+        margin: 30px auto;
+        padding: 25px 15px;
+        border-radius: 25px;
+    }
+
+
+    .heading {
+        text-align: center;
+    }
+
+
+    .heading span {
+        font-size: 25px;
+    }
+
+
+    .heading p {
+        font-size: 14px;
+    }
+
+
+    .inputbox input {
+
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 40px;
+
+    }
+
+
+    .inputbox i {
+        top: 27px;
+    }
+
+
+    .options label {
+
+        font-size: 13px;
+        margin-left: 0;
+
+    }
+
+
+    .lgn-btn {
+
+        width: 100%;
+        padding: 13px;
+        font-size: 18px;
+
+    }
+
+
+    .foot-ico {
+
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+
+    .icon {
+
+        width: 100px;
+        font-size: 14px;
+
+    }
+
+
+    .dnt-acc {
+
+        text-align: center;
+        font-size: 15px;
+
+    }
+
+
+
+
+    .foot-container {
+
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+
+    }
+
+
+    .first-section img {
+
+        width: 200px;
+        margin: 10px auto;
+
+    }
+
+
+    .first-section p {
+
+        margin: 0;
+        font-size: 16px;
+
+    }
+
+
+    .social-ico {
+
+        margin: 20px 0;
+
+    }
+
+
+    .copyright {
+
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        font-size: 13px;
+
+    }
+
+}
+
+
+
+@media(max-width:480px) {
+
+
+    .logo img {
+        width: 140px;
+    }
+
+
+    .buttons a {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+
+    .form-container {
+        width: 95%;
+    }
+
+
+    .heading span {
+        font-size: 22px;
+    }
+
+
+    .inputbox input {
+        font-size: 15px;
+    }
+
+
+    .foot-ico {
+        gap: 10px;
+    }
+
+
+    .icon {
+        width: 90px;
+    }
+
+
+}

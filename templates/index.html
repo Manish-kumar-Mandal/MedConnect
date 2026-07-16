@@ -1,0 +1,740 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med-Connect</title>
+
+    <link rel="icon" href="{% static 'images/iconpng.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+
+    <!-- login sucess popup  -->
+
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        alert("{{ message }}");
+    </script>
+    {% endfor %}
+    {% endif %}
+
+
+    <header>
+        <div class="mar">
+            <marquee>🏥 Welcome to MedConnect | Book Appointments Online | Expert Doctors Available | 24/7 Healthcare
+                Support | Secure & Private Consultation | Trusted Medical Services | Your Health, Our Priority ❤️
+            </marquee>
+        </div>
+
+        <nav>
+
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+
+            <!-- Hamburger -->
+            <div class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="items" id="navMenu">
+                <li><a class="active" href="{% url 'home' %}">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="{% url 'doctors' %}">Doctors</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                <div class="buttons mobile-btn">
+                    <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+                    <a href="{% url 'logout' %}" class="login">Log out</a>
+                </div>
+            </ul>
+
+            <div class="buttons desktop-btn">
+                <p class="welcome">Welcome | {{ request.user.username }} ✅ </p>
+                <a href="{% url 'logout' %}" class="login">Log out </a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <section class="banner">
+
+        <div class="heading">
+            <div class="tagg">
+                <span class="tag">🏥 Trusted Healthcare Platform</span>
+            </div>
+
+            <h1>
+                Your Health,<br>
+                <span>Our Priority</span>
+            </h1>
+
+            <p>
+                Connect with experienced doctors online.
+                Consult, discuss and get the best medical
+                advice from the comfort of your home.
+            </p>
+
+            <div class="btns">
+                <a href="{% url 'bookappointment' %}" class="book">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+                <a href="#About" class="learn">Learn More</a>
+            </div>
+
+        </div>
+
+        <div class="float">
+
+            <div class="circle">
+                <img src="{% static '/images/ll.png' %}" alt="Doctor" class="doctor">
+            </div>
+
+
+            <div class="card card1" data-aos="zoom-in">
+                <i class="fa-solid card-right-ico fa-users"></i>
+                <div>
+                    <h4>Consult Online</h4>
+                    <p>24/7</p>
+                </div>
+            </div>
+
+            <div class="card card2" data-aos="zoom-in">
+                <i class="fa-solid card-right-ico fa-user-doctor"></i>
+                <div>
+                    <h4>Trusted</h4>
+                    <p>Doctors</p>
+                </div>
+            </div>
+
+            <div class="card card3" data-aos="zoom-in">
+                <i class="fa-solid card-right-ico fa-lock"></i>
+                <div>
+                    <h4>Secure &</h4>
+                    <p>Private</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="info">
+
+            <div class="box">
+                <h2>500+</h2>
+                <p>Doctors</p>
+            </div>
+
+            <div class="box">
+                <h2>15K+</h2>
+                <p>Patients</p>
+            </div>
+
+            <div class="box">
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- services section -->
+
+    <div class="title">
+        <h4>OUR SERVICES</h4>
+    </div>
+
+    <section id="services" class="features" data-aos="zoom-in">
+
+        <div class="feature-card">
+            <div class="icon blue">
+                <i class="fa-solid fa-video"></i>
+            </div>
+            <h3>Video Consultation</h3>
+            <p>Consult face-to-face<br>with doctors.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon purple">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <h3>Expert Doctors</h3>
+            <p>Connect with experienced<br>and verified doctors.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon violet">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3>Easy Booking</h3>
+            <p>Book appointments<br>instantly.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon green">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3>Safe & Secure</h3>
+            <p>Your data is safe<br>with us.</p>
+        </div>
+    </section>
+
+    <!-- Doctor section  -->
+
+    <section class="top-doctors">
+
+        <div class="section-header">
+            <div class="doc-title">
+                <p class="small-title">TOP DOCTORS</p>
+                <h2>Meet Our Top Specialists</h2>
+            </div>
+
+            <a href="{% url 'doctors' %}" class="view-all">
+                View All Doctors →
+            </a>
+        </div>
+
+        <div class="doctor-container" data-aos="fade-up">
+
+            <div class="doctor-card">
+                <img src="{% static '/images/doctor1.png' %}" alt="">
+
+                <div class="doctor-info">
+                    <h3>Dr. Rahul Sharma</h3>
+                    <p class="speciality">Cardiologist</p>
+
+                    <p class="rating">⭐ 4.8
+                        <span>(120 reviews)</span>
+                    </p>
+
+                    <p>10+ Years Exp.</p>
+
+                    <h4>₹500 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <img src="{% static '/images/doctor2.png' %}" alt="">
+
+                <div class="doctor-info">
+                    <h3>Dr. Priya Mehta</h3>
+                    <p class="speciality">Dermatologist</p>
+
+                    <p class="rating">⭐ 4.7
+                        <span>(98 reviews)</span>
+                    </p>
+
+                    <p>8+ Years Exp.</p>
+
+                    <h4>₹400 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+
+            <div class="doctor-card">
+                <img src="{% static '/images/doctor3.png' %}" alt="">
+
+                <div class="doctor-info">
+                    <h3>Dr. Arjun Verma</h3>
+                    <p class="speciality">General Physician</p>
+
+                    <p class="rating">⭐ 4.6
+                        <span>(150 reviews)</span>
+                    </p>
+
+                    <p>6+ Years Exp.</p>
+
+                    <h4>₹300 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+
+            <div class="doctor-card">
+                <img src="{% static '/images/doctor4.png' %}" alt="">
+
+                <div class="doctor-info">
+                    <h3>Dr. Neha Kapoor</h3>
+                    <p class="speciality">Pediatrician</p>
+
+                    <p class="rating">⭐ 4.9
+                        <span>(110 reviews)</span>
+                    </p>
+
+                    <p>9+ Years Exp.</p>
+
+                    <h4>₹450 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- About section  -->
+
+    <main>
+
+
+        <section id="About" class="about" data-aos="fade-left">
+
+            <div class="about-left-item">
+
+                <p class="small">ABOUT MEDCONNECT</p>
+
+                <h1>About <span>Us</span></h1>
+
+                <div class="line"></div>
+
+                <p class="about-text">
+                    MedConnect is a trusted online healthcare platform committed to making quality healthcare
+                    accessible,convenient and reliable for everyone. We connect you with experienced
+                    doctors,secure consultations,andcomprehensive healthcare services-all from the comfort of your
+                    home.
+                </p>
+
+                <a href="{% url 'bookappointment' %}" class="btn">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+
+            </div>
+
+            <div class="about-right-item">
+
+                <img src="{% static '/images/aboutpic.png' %}" alt="Doctor">
+
+                <div class="about-card">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <div>
+
+                        <h3>Your Health,</h3>
+                        <p>Our Priority</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Purpose section  -->
+
+        <section class="purpose">
+
+            <div class="purpose-heading">
+
+                <p>OUR PURPOSE</p>
+
+                <h2>Our Mission, Vision & Values</h2>
+
+                <div class="underline"></div>
+
+            </div>
+
+            <div class="purpose-container" data-aos="fade-right">
+
+                <div class="purpose-card">
+
+                    <div class="purpose-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div class="content">
+                        <h3>Our Mission</h3>
+                        <p>
+                            To make quality healthcare accessible to everyone through
+                            technology, compassion, and trust.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="purpose-card">
+
+                    <div class="purpose-icon">
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+
+                    <div class="content">
+                        <h3>Our Vision</h3>
+                        <p>
+                            To be the most trusted and innovative healthcare platform,
+                            improving lives every day.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="purpose-card">
+
+                    <div class="purpose-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+
+                    <div class="content">
+                        <h3>Our Values</h3>
+                        <p>
+                            We value trust, integrity, compassion and innovation in
+                            everything we do.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Graph section  -->
+
+
+        <section class="graph" data-aos="fade-in">
+
+            <div class="graph-box">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h2>10,000+</h2>
+                    <p>Happy Patients</p>
+                </div>
+            </div>
+
+            <div class="graph-box">
+                <i class="fa-solid fa-user-doctor"></i>
+                <div>
+                    <h2>500+</h2>
+                    <p>Expert Doctors</p>
+                </div>
+            </div>
+
+            <div class="graph-box">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div>
+                    <h2>50+</h2>
+                    <p>Specializations</p>
+                </div>
+            </div>
+
+            <div class="graph-box">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <h2>24/7</h2>
+                    <p>Support</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <!-- testimonial section  -->
+
+    <section class="testimonial-section">
+
+        <div class="testimonial-heading">
+            <p>TESTIMONIALS</p>
+            <h2>What Our Patients Say</h2>
+            <div class="heading-line"></div>
+        </div>
+
+        <div class="testimonial-container" data-aos="fade-up">
+
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+
+                <div class="card-content">
+
+                    <p class="review">
+                        MedConnect made it so easy to consult a
+                        doctor from home. The service is excellent
+                        and the doctors are very friendly.
+                    </p>
+
+                    <div class="patient">
+                        <img src="{% static '/images/patient3.png' %}" alt="Patient">
+
+                        <div class="patient-info">
+                            <h3>Sneha Patel</h3>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="testimonial-card">
+
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+
+                <div class="card-content">
+
+                    <p class="review">
+                        I love how simple it is to book appointments
+                        and get prescriptions. Highly recommended
+                        platform for everyone!
+                    </p>
+
+                    <div class="patient">
+                        <img src="{% static 'images/patient2.jpg' %}" alt="Patient">
+
+                        <div class="patient-info">
+                            <h3>Amit Verma</h3>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial-card">
+
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+
+                <div class="card-content">
+
+                    <p class="review">
+                        The doctors are professional and the
+                        support team is always helpful. Great
+                        experience overall!
+                    </p>
+
+                    <div class="patient">
+                        <img src="{% static '/images/patient.jpg' %}" alt="Patient">
+
+                        <div class="patient-info">
+                            <h3>Rohan Kumar</h3>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </section>
+
+    <!-- Faq section  -->
+
+
+    <section class="faq" data-aos="fade-up">
+        <div class="faq-heading">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to the most common questions.</p>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How do I book an appointment?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Select a doctor, choose your preferred date and time, then confirm your appointment.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Can I cancel my appointment?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, you can cancel or reschedule your appointment before the scheduled time.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Do you provide online consultation?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, online consultation is available with selected doctors.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Are all doctors verified?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, every doctor on our platform is verified and experienced.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- footer section  -->
+
+    <footer id="contact">
+        <div class="foot-container">
+            <div class="first-section">
+                <img src="{% static '/images/logotrns.png' %}" alt="logo">
+                <p>Your trusted online healthcare platform , <br> We connect you with the best doctors and care.</p>
+                <div class="social-ico">
+
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"> </a></i>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></a></i>
+                    <a href="https://www.twitter.com/" target="_blank"> <i class="fa-brands fa-twitter"></a></i>
+                    <a href="https://www.linkedin.com/in/manish-kumar-mandal-76437239b/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></a></i>
+                </div>
+            </div>
+
+            <div class="second-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#About">About us</a></li>
+                    <li><a href="##">Doctors</a></li>
+                    <li><a href="#services">services</a></li>
+                    <li><a href="##">contact</a></li>
+                </ul>
+            </div>
+
+            <div class="third-section">
+                <h3>For Patients</h3>
+                <ul>
+                    <li>Book Appointment</li>
+                    <li>Find Doctors</li>
+                    <li>My Appointments</li>
+                    <li>Prescriptions</li>
+                    <li>Health Blog</li>
+                </ul>
+            </div>
+
+            <div class="fourth-section">
+                <h3>For Doctors</h3>
+                <ul>
+                    <li>Doctors Dashboard</li>
+                    <li>Appointment Requests</li>
+                    <li>Patients</li>
+                    <li>Profile</li>
+                    <li>Resources</li>
+                </ul>
+            </div>
+
+            <div class="fifth-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li> <i class="fa-solid fa-phone"> </i> +91 9508361623</li>
+                    <li> <i class="fa-solid fa-envelope"></i> medconnect2026@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 123, New building , India</li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>&copy; 2026 MedConnect. All Rights Reserved.</p>
+
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120
+        });
+    </script>
+
+<!-- navbar js mobileview -->
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.onclick = () => {
+            navMenu.classList.toggle("show");
+        };
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+            link.onclick = () => {
+                navMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+    <!-- Faq js  -->
+
+    <script>
+        const questions = document.querySelectorAll(".faq-question");
+
+        questions.forEach(question => {
+            question.addEventListener("click", () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector("span");
+
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.textContent = "+";
+                } else {
+                    document.querySelectorAll(".faq-answer").forEach(a => a.style.maxHeight = null);
+                    document.querySelectorAll(".faq-question span").forEach(i => i.textContent = "+");
+
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.textContent = "−";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

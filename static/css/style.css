@@ -1,0 +1,1762 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* marquee section  */
+
+marquee {
+    background-color: #2564ebe1;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    height: 27px;
+}
+
+header {
+    background-color: white;
+    z-index: 10;
+    top: 0;
+    position: sticky;
+
+}
+
+
+/* Navbar section */
+
+
+nav {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background: #fff;
+    font-family: sans-serif;
+    box-shadow: 0 6px 13px rgba(0, 0, 0, .15);
+    position: relative;
+}
+
+nav ul {
+    margin-left: 200px;
+}
+
+.logo img {
+    width: clamp(170px, 18vw, 250px);
+    height: auto;
+    display: block;
+}
+
+.items .active {
+    color: #0052d4;
+}
+
+.items {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.items li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.items li a:hover {
+    color: #2563eb;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.welcome {
+    padding: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.login {
+    padding: 10px 22px;
+    border: 2px solid red;
+    border-radius: 30px;
+    text-decoration: none;
+    color: red;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.login:hover {
+    background: red;
+    color: #fff;
+}
+
+
+
+/* main section */
+
+.banner {
+    width: 105%;
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    padding: 60px 5%;
+    
+    background: linear-gradient(to top, #edf6ff, #b3d0f7);
+    position: relative;
+    overflow: hidden;
+}
+
+.tag {
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: "baloo bhai 2";
+
+
+}
+
+.tagg {
+    margin-bottom: 60px;
+}
+
+
+.heading {
+    flex: 1;
+    max-width: 650px;
+}
+
+.heading h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.2;
+    font-family: "poppins";
+}
+
+.heading p {
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.4;
+    margin: 20px 0;
+    color: rgb(85, 85, 85);
+    font-family: "baloo bhai 2";
+}
+
+.heading h1 span {
+    color: #2563eb;
+}
+
+
+.btns {
+    display: flex;
+    gap: 18px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+
+
+.book i {
+    font-size: 20px;
+}
+
+
+.book,
+.learn {
+    padding: 11px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: rgb(37, 99, 235);
+    gap: 10px;
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: 'Poppins';
+    transition: 0.3s;
+
+}
+
+.learn {
+    color: rgb(17, 17, 17);
+    background: white;
+    padding: 18px 65px;
+    text-decoration: none;
+    border-radius: 12px;
+    border-width: 2px;
+    font-family: 'Poppins';
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+}
+
+.book:hover {
+    background: #0d47c8;
+}
+
+
+.float {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle {
+    width: min(500px, 90vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #dcecff;
+    position: relative;
+}
+
+
+
+.doctor {
+    position: absolute;
+    left: 40%;
+    height: 100%;
+    max-height: 600px;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+
+.card {
+    position: absolute;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    border-radius: 18px;
+    transition: .5s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-family: "baloo bhai 2";
+}
+
+
+.card h4 {
+    font-size: 18px;
+    color: #222;
+}
+
+.card p {
+    font-size: 15px;
+    color: #666;
+}
+
+.card1 {
+    top: 60px;
+    left: 660px;
+}
+
+.card span {
+    font-size: 30px;
+
+}
+
+.card2 {
+    top: 200px;
+    left: 620px;
+}
+
+.card-right-ico {
+    color: #0d47c8;
+    font-size: 30px;
+}
+
+.card3 {
+    bottom: 60px;
+    left: 680px;
+}
+
+
+/* Info section */
+
+
+.info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+
+    justify-content: center;
+}
+
+.info .box {
+    text-align: center;
+}
+
+.info .box h2 {
+
+    color: #2563eb;
+    font-size: 35px;
+
+}
+
+.info .box p {
+    margin-top: 5px;
+
+}
+
+
+/* feature section */
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-family: "baloo bhai 2";
+
+
+}
+
+.title h4 {
+
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+
+#services {
+    scroll-margin-top: 470px;
+}
+
+.features {
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    cursor: pointer;
+    font-family: sans-serif;
+
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.icon:hover {
+    background: #91cf0a68;
+}
+
+.blue {
+    background: #eaf2ff;
+    color: #2d7cff;
+}
+
+.purple {
+    background: #f5ebff;
+    color: #8b3dff;
+}
+
+.violet {
+    background: #f1eaff;
+    color: #6f42ff;
+}
+
+.green {
+    background: #eafaf2;
+    color: #19b36b;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+}
+
+
+
+/* Top doctors section */
+
+
+.top-doctors {
+    width: 90%;
+    margin: 70px auto 40px;
+    font-family: "baloo bhai 2";
+
+
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.small-title {
+    color: #2c7df7;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+}
+
+.doc-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-direction: column;
+    margin-left: 40%;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1b1b1b;
+    font-family: "poppins";
+
+}
+
+.view-all {
+    color: #2c7df7;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.view-all:hover {
+    color: #0052d4;
+}
+
+.doctor-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    font-family: sans-serif;
+
+}
+
+.doctor-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    transition: .4s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .15);
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 285px
+}
+
+.doctor-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.doctor-info h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.speciality {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: #ffb400;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.rating span {
+    color: #777;
+    font-size: 14px;
+}
+
+.doctor-info p {
+    margin-bottom: 12px;
+}
+
+.doctor-info h4 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.doctor-info button {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #2c7df7;
+    background: #fff;
+    color: #2c7df7;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.doctor-info button:hover {
+    background: #2c7df7;
+    color: #fff;
+}
+
+
+
+/* About section */
+
+
+.about {
+    width: 90%;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+}
+
+
+main {
+    background: linear-gradient(to top, #80a9df92, #edf6ff);
+    padding: 10px 0;
+
+}
+
+#About {
+    scroll-margin-top: 130px;
+}
+
+.small {
+    color: #0d6efd;
+    letter-spacing: 1px;
+    background-color: #dbeafe;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-block;
+    font-family: "poppins";
+
+}
+
+.about-left-item {
+    margin-left: 90px;
+}
+
+.about-left-item h1 {
+    font-family: "baloo bhai 2";
+
+    font-size: 65px;
+    margin: 15px 0;
+}
+
+.about-left-item span {
+    color: #0d6efd;
+}
+
+.line {
+    width: 90px;
+    height: 4px;
+    border: 2px solid #0d6efd;
+    margin-bottom: 35px;
+    margin-top: -22px;
+}
+
+.about-text {
+    color: #666;
+    line-height: 28px;
+    font-family: "Baloo Bhai 2", "poppins";
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+
+.btn {
+    background: #0d6efd;
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 15px 28px;
+    transition: .3s;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background: #0d47c8;
+
+}
+
+.btn i {
+    margin-right: 10px;
+}
+
+.about-right-item {
+    position: relative;
+    font-family: serif;
+
+}
+
+.about-right-item img {
+    width: 80%;
+    border-radius: 18px;
+    margin-left: 7vw;
+    opacity: 0.9;
+}
+
+.about-card {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: .3s;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card i {
+    font-size: 35px;
+    color: #0d6efd;
+
+}
+
+.about-card h3 {
+    margin-bottom: 5px;
+}
+
+.about-card p {
+    color: #666;
+}
+
+
+/* About-vision  section */
+
+.purpose {
+    width: 90%;
+    margin: 80px auto;
+
+}
+
+.purpose-heading {
+    text-align: center;
+}
+
+.purpose-heading p {
+    font-family: "baloo bhai 2";
+
+    color: #0d6efd;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.purpose-heading h2 {
+    font-family: "poppins";
+
+    font-size: 32px;
+    margin: 12px 0;
+    color: #091c3f;
+    position: relative;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    margin: 20px auto 50px;
+    background: #0d6efd;
+    border-radius: 20px;
+}
+
+.purpose-container {
+    font-family: "poppins";
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.purpose-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 35px;
+    background-color: #ffffffac;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.purpose-card:hover {
+    transform: translateY(-8px);
+}
+
+.purpose-icon {
+    width: 170px;
+    height: 90px;
+    border-radius: 20%;
+    background: #bad0f2a3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d6efd;
+    font-size: 40px;
+}
+
+.purpose-icon:hover {
+    background-color: #91cf0a68;
+}
+
+.content h3 {
+    margin-bottom: 12px;
+    color: #091c3f;
+}
+
+.content p {
+    color: #666;
+    line-height: 28px;
+}
+
+
+
+
+/* Graph section */
+
+.graph {
+    width: 90%;
+    margin: 40px auto 80px;
+    padding: 35px 20px;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: linear-gradient(90deg, #3d5afeca, #2c7df7cd);
+    color: #fff;
+    font-family: sans-serif;
+
+}
+
+.graph-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.graph-box:nth-child(4) {
+    border: none;
+}
+
+.graph-box i {
+    font-size: 42px;
+    margin: 0 12px;
+}
+
+.graph-box h2 {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.graph-box p {
+    font-size: 17px;
+}
+
+
+
+
+/* TESTIMONIAL SECTION */
+
+
+.testimonial-section {
+    width: 100%;
+    padding: 22px 7% 20px;
+}
+
+.testimonial-heading {
+    text-align: center;
+}
+
+.testimonial-heading p {
+   font-family: "baloo bhai 2";
+    color: #0d6efd;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.testimonial-heading h2 {
+    font-family: "poppins";
+    font-size: 32px;
+    color: #091c3f;
+}
+
+.heading-line {
+    width: 60px;
+    height: 4px;
+    margin: 10px auto 20px;
+    background: #0d6efd;
+    border-radius: 20px;
+
+}
+
+
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.testimonial-card {
+    width: 33.33%;
+    min-height: 175px;
+    border: 1px solid #e7e7e7;
+    border-radius: 15px;
+    padding: 25px 28px;
+    display: flex;
+    gap: 25px;
+    background: #ffffff;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.testimonial-card:hover{
+    transform: translatex(-10px);
+}
+
+.quote-icon {
+    color: #0867f2;
+    font-size: 30px;
+    margin-top: 3px;
+}
+
+
+
+.card-content {
+    flex: 1;
+}
+
+.review {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: #252a35;
+}
+
+
+
+.patient {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 17px;
+}
+
+.patient img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.patient-info h3 {
+    font-size: 15px;
+    color: #171b25;
+    margin-bottom: 5px;
+    font-family: "baloo bhai 2";
+}
+
+.patient-info p {
+    font-size: 14px;
+    color: #8b8d98;
+    font-family: "poppins";
+}
+
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    background: #dedede;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: #0867f2;
+}
+
+
+/* Faq section  */
+
+
+.faq{
+    width:90%;
+    max-width:900px;
+    margin:70px auto;
+}
+
+.faq-heading{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.faq-heading h2{
+    font-size:36px;
+    color:#0f172a;
+    font-family: "poppins";
+
+}
+
+.faq-heading p{
+    color:#666;
+    margin-top:8px;
+    font-family: "baloo bhai 2";
+}
+
+.faq-item{
+    background:#fff;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+    padding:18px 22px;
+    border:none;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.faq-question span{
+    font-size:28px;
+    color:#2563eb;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.faq-answer p{
+    padding:0 22px 18px;
+    color:#555;
+    line-height:1.6;
+    font-family: "baloo bhai 2";
+}
+
+@media(max-width:768px){
+    .faq-heading h2{
+        font-size:28px;
+    }
+
+    .faq-question{
+        font-size:16px;
+        padding:16px;
+    }
+
+    .faq-answer p{
+        font-size:15px;
+    }
+}
+
+
+/* RESPONSIVE OF TESTIOMONIAL */
+
+@media (max-width: 900px) {
+
+    .testimonial-container {
+        flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+        width: 48%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .testimonial-section {
+        padding: 30px 20px;
+    }
+
+    .testimonial-heading h2 {
+        font-size: 25px;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+    }
+
+    .testimonial-card {
+        width: 100%;
+    }
+}
+
+
+
+
+/* footer section */
+
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(200, 197, 197);
+    background-color: rgba(4, 4, 53, 0.855);
+    padding-bottom: 20px;
+
+}
+
+.foot-container li {
+    list-style: none;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+
+.foot-container h3 {
+    margin-bottom: 20px;
+}
+
+.first-section img {
+    width: 270px;
+    margin: 17px 38px;
+}
+
+.first-section p {
+    margin-left: 70px;
+    font-size: 20px;
+    font-family: serif;
+    color: rgb(222, 213, 213);
+    line-height: 27px;
+}
+
+.social-ico {
+    margin-left: 70px;
+    padding: 26px 0;
+
+}
+
+.fa-linkedin:hover {
+    color: rgb(11, 93, 199);
+}
+
+.fa-facebook:hover {
+    color: blue;
+}
+
+.fa-instagram:hover {
+    color: palevioletred;
+}
+
+.fa-twitter:hover {
+    color: cyan;
+}
+
+.social-ico a {
+    color: white;
+}
+
+.social-ico i {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 7px;
+    font-size: 15px;
+    margin: 0 4px;
+}
+
+.second-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.second-section a {
+    color: rgb(200, 197, 197);
+    text-decoration: none;
+}
+
+.third-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.fourth-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.fifth-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+    margin-right: 240px;
+}
+
+.fifth-section i {
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+
+/* copyright section */
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: gray;
+}
+
+
+.copyright {
+    background-color: rgba(4, 4, 53, 0.855);
+    color: rgb(201, 198, 198);
+    padding: 12px;
+    display: flex;
+    font-family: "poppins";
+    justify-content: space-between;
+
+}
+
+/* Responsive navbar  */
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2563eb;
+}
+
+.desktop-btn {
+    display: flex;
+}
+
+.mobile-btn {
+    display: none;
+}
+
+/* =====================================================
+   Responsive Design for Large Screens (1800px - 1200px)
+===================================================== */
+
+@media screen and (min-width:1201px) and (max-width:1800px) {
+
+    nav{
+        padding:0 4%;
+    }
+
+    .logo img{
+        width:220px;
+    }
+
+    .items{
+        gap:28px;
+        margin-left:90px;
+    }
+
+    .items li a{
+        font-size:17px;
+    }
+
+    .welcome{
+        font-size:15px;
+    }
+
+    .login{
+        padding:10px 20px;
+    }
+
+    /* Banner */
+
+    .banner{
+        width:100%;
+        padding:60px 4%;
+        gap:40px;
+        min-height:88vh;
+    }
+
+    .heading{
+        max-width:600px;
+    }
+
+    .heading h1{
+        font-size:58px;
+        line-height:1.2;
+    }
+
+    .heading p{
+        font-size:20px;
+    }
+
+    .btns{
+        margin-top:35px;
+    }
+
+    .book{
+        padding:13px 32px;
+    }
+
+    .learn{
+        padding:17px 45px;
+    }
+
+    /* Hero Image */
+
+    .circle{
+        width:450px;
+        height:450px;
+    }
+
+    .doctor{
+        max-height:560px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    /* Floating Cards */
+
+    .card{
+        padding:16px 30px;
+    }
+
+    .card1{
+        top:55px;
+        left:78%;
+    }
+
+    .card2{
+        top:180px;
+        left:73%;
+    }
+
+    .card3{
+        bottom:45px;
+        left:80%;
+    }
+
+    /* Statistics */
+
+    .info{
+        gap:45px;
+        bottom:20px;
+    }
+
+    .info .box h2{
+        font-size:32px;
+    }
+
+    /* Features */
+
+    .features{
+        width:90%;
+        gap:22px;
+    }
+
+    /* Doctors */
+
+    .doctor-container{
+        grid-template-columns:repeat(4,1fr);
+        gap:24px;
+    }
+
+    .doctor-card img{
+        height:260px;
+    }
+
+    /* About */
+
+    .about{
+        gap:60px;
+    }
+
+    .about-left-item{
+        margin-left:40px;
+    }
+
+    .about-left-item h1{
+        font-size:55px;
+    }
+
+    .about-text{
+        font-size:19px;
+    }
+
+    .about-right-item img{
+        width:90%;
+        margin-left:0;
+    }
+
+    /* Purpose */
+
+    .purpose-container{
+        grid-template-columns:repeat(3,1fr);
+        gap:20px;
+    }
+
+    .purpose-card{
+        padding:28px;
+    }
+
+    /* Graph */
+
+    .graph{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .graph-box h2{
+        font-size:34px;
+    }
+
+    /* Footer */
+
+    .foot-container{
+        padding:40px 4%;
+    }
+
+    .first-section p{
+        margin-left:40px;
+        font-size:18px;
+    }
+
+    .social-ico{
+        margin-left:40px;
+    }
+
+    .fifth-section{
+        margin-right:0;
+    }
+
+}
+
+
+@media (max-width:1200px) {
+
+    nav {
+        padding: 0 40px;
+    }
+
+    .items {
+        gap: 25px;
+        margin-left: 40px;
+    }
+
+    .banner {
+        padding: 60px 40px;
+        gap: 30px;
+    }
+
+    .heading h1 {
+        font-size: 56px;
+    }
+
+    .heading p {
+        font-size: 20px;
+    }
+
+    .circle {
+        width: 420px;
+        height: 420px;
+    }
+
+    .doctor {
+        width: 120%;
+    }
+
+    .doctor-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .purpose-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .graph {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+    }
+
+    .graph-box {
+        border: none;
+    }
+
+}
+
+
+@media (max-width:992px) {
+
+    nav {
+        padding: 18px 25px;
+        height: auto;
+    }
+
+    .desktop-btn {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .items {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 30px 0;
+        margin: 0;
+        display: none;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, .15);
+        z-index: 1000;
+    }
+
+    .items.show {
+        display: flex;
+    }
+
+    .mobile-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 60px 30px 140px;
+    }
+
+    .heading {
+        max-width: 100%;
+    }
+
+    .btns {
+        justify-content: center;
+    }
+
+    .float {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .card {
+        display: none;
+    }
+
+    .info {
+        position: static;
+        transform: none;
+        margin-top: 40px;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-left-item {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .line {
+        margin: 20px auto;
+    }
+
+    .about-right-item {
+        text-align: center;
+    }
+
+    .about-right-item img {
+        width: 70%;
+        margin-left: 0;
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    .heading h1 {
+        font-size: 42px;
+    }
+
+    .heading p {
+        font-size: 18px;
+    }
+
+    .circle {
+        width: 330px;
+        height: 330px;
+    }
+
+    .doctor {
+        width: 115%;
+    }
+
+    .doctor-container {
+        grid-template-columns: 1fr;
+    }
+
+    .purpose-container {
+        grid-template-columns: 1fr;
+    }
+
+    .graph {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-box {
+        padding: 20px;
+        justify-content: flex-start;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .doc-title {
+        margin-left: 0;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .foot-container {
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+
+    .fifth-section {
+        margin-right: 0;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+}
+
+
+
+
+@media (max-width:576px) {
+
+    nav {
+        padding: 15px 18px;
+    }
+
+    .logo img {
+        width: 170px;
+    }
+
+    .heading h1 {
+        font-size: 34px;
+    }
+
+    .heading p {
+        font-size: 16px;
+    }
+
+    .btns {
+        flex-direction: column;
+    }
+
+    .book,
+    .learn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .doctor {
+        width: 120%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-left-item h1 {
+        font-size: 42px;
+    }
+
+    .purpose-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .purpose-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+}
+
+
+
+
+@media (max-width:400px) {
+
+    .banner {
+        padding: 45px 18px 120px;
+    }
+
+    .heading h1 {
+        font-size: 29px;
+    }
+
+    .heading p {
+        font-size: 15px;
+    }
+
+    .circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .doctor {
+        width: 125%;
+    }
+
+    .info {
+        gap: 20px;
+    }
+
+    .info .box h2 {
+        font-size: 26px;
+    }
+
+    .feature-card {
+        padding: 25px 15px;
+    }
+
+    .doctor-info {
+        padding: 18px;
+    }
+
+    .about-left-item h1 {
+        font-size: 34px;
+    }
+
+    .graph-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .first-section img {
+        width: 180px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .first-section p,
+    .social-ico {
+        margin-left: 0;
+        text-align: center;
+    }
+
+}

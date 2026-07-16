@@ -1,0 +1,307 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor-Profile|MedConnect</title>
+    <link rel="icon" href="{% static 'images/iconpng.png' %}">
+    <link rel="stylesheet" href="{% static 'css/viewprofile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+
+        <!-- Hamburger -->
+        <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="items" id="navMenu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'home' %}#About">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+            <div class="buttons mobile-btn">
+                <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+                <a href="{% url 'logout' %}" class="login">Log out </a>
+            </div>
+        </ul>
+
+        <div class="buttons desktop-btn">
+            <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+            <a href="{% url 'logout' %}" class="login">Log out </a>
+        </div>
+
+    </nav>
+    <section class="doc-card" data-aos="zoom-out">
+        <div class="doc-main-card">
+            <div class="doc-img">
+                <img src="{% static 'images/doctor1.png' %}" alt="profile">
+                <div class="value">
+
+                    <h3>⭐ 4.8</h3>
+                    <p>(128 reviews)</p>
+                </div>
+
+            </div>
+
+            <div class="doc-details">
+                <h3>Cardiologist</h3>
+                <h1>Dr. Rahul Sharma</h1>
+                <p>MBBS, MD (Cardiology), DM (Cardiology) <br>
+                    12+ Years Experience Overall</p>
+
+                <h4>Dr.Rahul Sharma is a highly experienced Cardiologist with expertise in <br> interventional
+                    cardiology,
+                    preventive heart care and management of complex <br> heart Conditions.</h4>
+
+                <span><i class="fa-solid fa-lock"></i> City Heart Institute, New Delhi</span>
+                <span><i class="fa-solid fa-location-dot"></i> New Delhi , India</span>
+                <span><i class="fa-solid fa-book"></i> English , Hindi</span>
+            </div>
+
+            <div class="doc-payment-card">
+                <h3>Consultation Fee</h3>
+                <h2>₹500</h2>
+                <h4>(Consultation Charges)</h4>
+
+                <a href="{% url 'bookappointment' %}"> <button class="book"> <i class="fa-solid  fa-calendar-check"></i>Book
+                        Appointment</button></a>
+                <button class="chat"><i class="fa-regular  fa-comment"></i>Chat with Doctor</button>
+
+                <p>Availabe Today</p>
+                <p class="time">10:00 AM - 06:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor - about section  -->
+
+    <section class="about-doctor" data-aos="fade-up">
+        <div class="about">
+
+            <h2>About Doctor</h2>
+            <p> Dr. Rahul Sharma is a dedicated cardiologist with offer 12 years of experience in diagnosing and
+                treating a
+                wide range of heart conditions. <br>He specializes in interventional cardiology, heart failure
+                management and preventive cardiology. <br><br>
+                He is committed to providing personal personalized fear and
+                believes in patient education and lifestyle modification for long-term heart health.</p>
+        </div>
+
+        <div id="about" class="about-doct-card">
+            <div class="about-card" data-aos="fade-right">
+                <div class="card">
+                    <i class="fa-solid about-ico fa-calendar-check"></i>
+                    <h4>Experience</h4>
+                    <h2>12+ Years</h2>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid about-ico fa-book-medical"></i>
+
+                    <h4>Specialization</h4>
+                    <h2>Cardiologist</h2>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid about-ico fa-hospital"></i>
+
+                    <h4>Hospital</h4>
+                    <h2>City Heart</h2>
+                </div>
+            </div>
+
+
+            <div class="about-card2" data-aos="fade-left">
+                <div>
+                    <div class="card">
+
+                        <i class="fa-solid about-ico fa-money-bill"></i>
+                        <h2>Consultation</h2>
+                        <h4>₹500</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+
+                        <i class="fa-solid about-ico fa-language"></i>
+                        <h2>Languages</h2>
+                        <h4>Engkish, Hindi</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+
+                        <i class="fa-solid about-ico fa-user"></i>
+                        <h2>Patients Treated</h2>
+                        <h4>5000+</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Graph section  -->
+
+    <section class="graph" data-aos="fade-in">
+
+        <div class="graph-box">
+            <i class="fa-solid fa-users"></i>
+            <div>
+                <h2>5,000+</h2>
+                <p>Happy Patients</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-heart"></i>
+            <div>
+                <h2>500+</h2>
+                <p>Reviews & Feedback</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div>
+                <h2>250+</h2>
+                <p> Achievements </p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-headset"></i>
+            <div>
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- footer section  -->
+
+    <footer id="contact">
+        <div class="foot-container">
+            <div class="first-section">
+                <img src="{% static 'images/logotrns.png' %}" alt="logo">
+                <p>Your trusted online healthcare platform , <br> We connect you with the best doctors and care.</p>
+                <div class="social-ico">
+
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"> </a></i>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></a></i>
+                    <a href="https://www.twitter.com/" target="_blank"> <i class="fa-brands fa-twitter"></a></i>
+                    <a href="https://www.linkedin.com/in/manish-kumar-mandal-76437239b/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></a></i>
+                </div>
+            </div>
+
+            <div class="second-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="##">Home</a></li>
+                    <li><a href="##">About us</a></li>
+                    <li><a href="##">Doctors</a></li>
+                    <li><a href="##">services</a></li>
+                    <li><a href="##">contact</a></li>
+                </ul>
+            </div>
+
+            <div class="third-section">
+                <h3>For Patients</h3>
+                <ul>
+                    <li>Book Appointment</li>
+                    <li>Find Doctors</li>
+                    <li>My Appointments</li>
+                    <li>Prescriptions</li>
+                    <li>Health Blog</li>
+                </ul>
+            </div>
+
+            <div class="fourth-section">
+                <h3>For Doctors</h3>
+                <ul>
+                    <li>Doctors Dashboard</li>
+                    <li>Appointment Requests</li>
+                    <li>Patients</li>
+                    <li>Profile</li>
+                    <li>Resources</li>
+                </ul>
+            </div>
+
+            <div class="fifth-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li> <i class="fa-solid fa-phone"> </i> +91 9508361623</li>
+                    <li> <i class="fa-solid fa-envelope"></i> medconnect2026@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 123, New building , India</li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>&copy; 2026 MedConnect. All Rights Reserved.</p>
+
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120
+        });
+    </script>
+    
+<!-- navbar js mobileview  -->
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.onclick = () => {
+            navMenu.classList.toggle("show");
+        };
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+            link.onclick = () => {
+                navMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

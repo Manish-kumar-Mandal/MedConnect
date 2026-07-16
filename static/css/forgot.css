@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(360deg, #edf6ff, #b3d0f7);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar section */
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.login,
+.register {
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.login {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.login:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.register {
+    background: #2563eb;
+    color: white;
+}
+
+.register:hover {
+    background: #0d47c8;
+}
+
+
+
+/* Form section */
+
+
+.form-container {
+    width: 60%;
+    min-height: 650px;
+    background: white;
+    margin: 60px auto;
+    display: flex;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,.15);
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.heading h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.heading span {
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.heading p {
+    color: gray;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.inputbox {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.inputbox i {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    color: #2563eb;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 16px 18px 16px 48px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 17px;
+    outline: none;
+}
+
+.inputbox input:focus {
+    border-color: #2563eb;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 16px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.reset-btn:hover {
+    background: #0d47c8;
+}
+
+.divider {
+    text-align: center;
+    margin: 30px 0;
+    color: gray;
+}
+
+.back-login {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.back-login:hover {
+    text-decoration: underline;
+}
+
+
+
+.right {
+    width: 50%;
+    background: linear-gradient(135deg,#2563eb,#4f9cff);
+    position: relative;
+    overflow: hidden;
+}
+
+.right img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 520px;
+    z-index: 1;
+}
+
+.card {
+    width: 330px;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    position: absolute;
+}
+
+.card i {
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.card1 {
+    top: 40px;
+    left: 20px;
+}
+
+.card2 {
+    top: 170px;
+    right: 20px;
+}
+
+.card3 {
+    bottom: 40px;
+    left: 20px;
+}
+
+
+
+/* Footer section */
+
+footer {
+    background: rgba(4,4,53,.92);
+    color: #ddd;
+}
+
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 40px 60px;
+    color: rgb(200, 197, 197);
+    font-size: 15px;
+}
+    
+
+.first-section img {
+    width: 240px;
+}
+
+.first-section p {
+    margin: 20px 0;
+    line-height: 28px;
+}
+
+.social-ico a {
+    color: white;
+    margin-right: 10px;
+}
+
+.social-ico i {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.second-section ul,
+.third-section ul,
+.fourth-section ul {
+    list-style: none;
+}
+
+.second-section li,
+.third-section li,
+.fourth-section li {
+    margin-top: 12px;
+    
+}
+
+.second-section a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: gray;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 40px;
+    color: #ddd;
+}
+
+
+
+
+
+@media (max-width:1200px){
+
+    .form-container{
+        width:90%;
+    }
+
+    .right img{
+        height:430px;
+    }
+
+    .card{
+        width:290px;
+    }
+
+}
+
+
+@media (max-width:992px){
+
+    nav{
+        padding:0 20px;
+    }
+
+    .logo img{
+        width:190px;
+    }
+
+    .form-container{
+        flex-direction:column;
+        width:95%;
+        border-radius:25px;
+        min-height:auto;
+    }
+
+    .left,
+    .right{
+        width:100%;
+    }
+
+    .left{
+        padding:40px 30px;
+    }
+
+    .right{
+        min-height:650px;
+        border-radius:0 0 25px 25px;
+    }
+
+    .right img{
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        height:380px;
+    }
+
+    .card{
+        width:85%;
+        position:relative;
+        top:auto;
+        left:auto;
+        right:auto;
+        bottom:auto;
+        margin:20px auto;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+        gap:15px;
+    }
+
+    .buttons{
+        width:100%;
+        justify-content:center;
+    }
+
+    .login,
+    .register{
+        width:140px;
+        text-align:center;
+    }
+
+    .form-container{
+        width:95%;
+        margin:30px auto;
+    }
+
+    .left{
+        padding:25px;
+    }
+
+    .heading span{
+        font-size:30px;
+    }
+
+    .heading p{
+        font-size:15px;
+    }
+
+    .inputbox input{
+        font-size:16px;
+    }
+
+    .reset-btn{
+        font-size:18px;
+    }
+
+    .right{
+        min-height:560px;
+    }
+
+    .right img{
+        height:260px;
+    }
+
+    .card{
+        width:92%;
+        padding:14px;
+    }
+
+    .card h3{
+        font-size:18px;
+    }
+
+    .card p{
+        font-size:14px;
+    }
+
+    .foot-container{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .first-section img{
+        margin:auto;
+    }
+
+    .social-ico{
+        margin-top:20px;
+    }
+
+    .copyright{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .heading span{
+        font-size:24px;
+    }
+
+    .heading p{
+        font-size:14px;
+    }
+
+    .inputbox input{
+        padding:14px 14px 14px 45px;
+        font-size:15px;
+    }
+
+    .reset-btn{
+        padding:14px;
+        font-size:16px;
+    }
+
+    .right{
+        min-height:500px;
+    }
+
+    .right img{
+        height:220px;
+    }
+
+    .card{
+        width:95%;
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .card i{
+        font-size:26px;
+    }
+
+    .logo img{
+        width:160px;
+    }
+}

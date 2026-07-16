@@ -1,0 +1,993 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(360deg, #edf6ff, #b3d0f7);
+}
+
+
+    /* popup section */
+    .popup{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content{
+    width: 360px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+    background: #28a745;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.close{
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+.popup-content h2{
+    color: #2563eb;
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+.popup-content button{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.popup-content button:hover{
+    background: #1d4ed8;
+}
+
+
+/* Navbar section */
+
+
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: sans-serif;
+}
+
+nav ul {
+    margin-left: 200px;
+}
+
+.logo img {
+    width: 250px;
+    height: 60px;
+}
+
+.items .active {
+    color: #0052d4;
+}
+
+.items {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+}
+
+.items li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.items li a:hover {
+    color: #2563eb;
+}
+
+.buttons {
+    display: flex;
+    gap: 3px;
+}
+
+.login {
+    padding: 1px 22px;
+    border: 2px solid red;
+    border-radius: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: red;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.login:hover {
+    background: rgba(255, 0, 0, 0.712);
+    color: #fff;
+}
+
+.welcome {
+    padding: 12px 12px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+
+/* book-appointmment form  */
+
+
+
+.book-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+
+}
+
+
+.book-head h1 {
+    margin: 20px;
+    font-family: "poppins";
+    font-size: 43px;
+    color: #0558df;
+    border-bottom: 4px solid #0052d4;
+    margin-bottom: 28px;
+
+}
+
+.book-head p {
+    margin-top: -15px;
+    font-size: 18px;
+    font-family: sans-serif;
+
+}
+
+
+.left-book-form h1 {
+    font-family: "poppins";
+    margin-left: 22px;
+}
+
+
+
+.fa-calendar-days {
+    position: absolute;
+    left: -15px;
+    font-size: 27px;
+    top: 10px;
+    color: #0d47c8;
+}
+
+.left-book-form p {
+    width: 60px;
+    border: 2px solid #0051d494;
+    margin-top: -8px;
+    margin-left: 10px;
+}
+
+.book-row {
+    display: flex;
+    gap: 37px;
+}
+
+.book-row select {
+    padding: 12px 12px;
+    width: 14vw;
+    appearance: none;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.506);
+    border-radius: 8px;
+    margin-bottom: 29px;
+    cursor: pointer;
+    transition: .1s;
+
+}
+
+.book-row select:hover {
+    border: 3px solid #0051d498;
+
+}
+
+.book-row input:hover {
+    border: 3px solid #0051d498;
+
+}
+
+textarea {
+    padding: 12px 33px;
+    width: 30vw;
+    height: 150px;
+    appearance: none;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.506);
+    border-radius: 8px;
+    margin-bottom: 29px;
+    resize: none;
+    transition: .1s;
+
+}
+
+textarea::placeholder {
+    font-family: sans-serif;
+}
+
+
+textarea:hover {
+    border: 3px solid #0051d498;
+
+}
+
+.select-box input {
+    padding: 12px 12px;
+    width: 14vw;
+    appearance: none;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.506);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: .1s;
+
+}
+
+.book-col input:hover {
+    border: 3px solid #0051d498;
+
+}
+
+
+.left-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    margin-left: 50px;
+}
+
+
+
+.book-col input {
+    margin-bottom: 20px;
+    width: 30vw;
+    padding: 12px 33px;
+    border-radius: 8px;
+    outline: none;
+    transition: .1s;
+    border: 1px solid rgba(128, 128, 128, 0.506);
+}
+
+
+label {
+    display: block;
+    font-family: "baloo bhai 2";
+    font-weight: 600;
+}
+
+.appointment-details {
+    background-color: #fff;
+    padding: 40px 40px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 9px;
+    margin-left: 320px;
+    margin-top: 30px;
+    display: flex;
+    gap: 200px;
+    width: 70vw;
+}
+
+
+button {
+    padding: 10px 19px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 500;
+    font-family: "baloo bhai 2";
+
+}
+
+button:hover {
+    background-color: #0d47c8;
+}
+
+.input-box {
+    position: relative;
+
+}
+
+.ico {
+    position: absolute;
+    left: 11px;
+    top: 14px;
+    color: gray;
+    font-size: 14px;
+}
+
+.shield {
+    position: absolute;
+    left: 9px;
+    top: 39px;
+    color: gray;
+}
+
+.arrow {
+    position: absolute;
+    right: 9px;
+    top: 39px;
+    color: gray;
+}
+
+
+.note-box {
+    display: flex;
+    gap: 15px;
+    background: #2564eb52;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 25px;
+    font-family: "poppins";
+}
+
+.note-box i {
+    color: #0e00d4d8;
+    font-size: 38px;
+}
+
+
+/* right section  */
+
+.doctor-card,
+.summary,
+.safe-box {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+}
+
+.doctor-card {
+    text-align: center;
+}
+
+.doctor-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+.doctor-card h3 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.doctor-card span {
+    color: #0558df;
+    font-weight: bold;
+}
+
+.doctor-card i {
+    color: #0052d4;
+}
+
+.doctor-card p {
+    margin-top: 15px;
+    color: #666;
+}
+
+.summary .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+    color: #555;
+}
+
+.summary i {
+    color: #0052d4;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.total span:last-child {
+    color: #0558df;
+}
+
+.safe-box {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background: #0559df5d;
+}
+
+.safe-box i {
+    font-size: 35px;
+    color: #0052d4;
+}
+
+
+
+/* Graph section */
+
+.graph {
+    width: 90%;
+    margin: 40px auto 80px;
+    padding: 35px 20px;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: linear-gradient(90deg, #3d5afeca, #2c7df7cd);
+    color: #fff;
+    font-family: sans-serif;
+
+}
+
+.graph-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.graph-box:nth-child(4) {
+    border: none;
+}
+
+.graph-box i {
+    font-size: 42px;
+    margin: 0 12px;
+}
+
+.graph-box h2 {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.graph-box p {
+    font-size: 17px;
+}
+
+
+
+/* footer section */
+
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(200, 197, 197);
+    background-color: rgba(4, 4, 53, 0.855);
+    padding-bottom: 20px;
+
+}
+
+.foot-container li {
+    list-style: none;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+
+.foot-container h3 {
+    margin-bottom: 20px;
+}
+
+.first-section img {
+    width: 270px;
+    margin: 17px 38px;
+}
+
+.first-section p {
+    margin-left: 70px;
+    font-size: 20px;
+    font-family: serif;
+    color: rgb(222, 213, 213);
+    line-height: 27px;
+}
+
+.social-ico {
+    margin-left: 70px;
+    padding: 26px 0;
+
+}
+
+.fa-linkedin:hover {
+    color: rgb(11, 93, 199);
+}
+
+.fa-facebook:hover {
+    color: blue;
+}
+
+.fa-instagram:hover {
+    color: palevioletred;
+}
+
+.fa-twitter:hover {
+    color: cyan;
+}
+
+.social-ico a {
+    color: white;
+}
+
+.social-ico i {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 7px;
+    font-size: 15px;
+    margin: 0 4px;
+}
+
+.second-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.second-section a {
+    color: rgb(200, 197, 197);
+    text-decoration: none;
+}
+
+.third-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.fourth-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+}
+
+.fifth-section {
+    font-family: "baloo bhai 2";
+    margin-top: 30px;
+    margin-right: 240px;
+}
+
+.fifth-section i {
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+
+/* copyright section */
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: gray;
+}
+
+
+.copyright {
+    background-color: rgba(4, 4, 53, 0.855);
+    color: rgb(201, 198, 198);
+    padding: 12px;
+    display: flex;
+    font-family: "poppins";
+    justify-content: space-between;
+
+}
+
+
+/* RESPONSIVE NAVBAR */
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2563eb;
+}
+
+.desktop-btn {
+    display: flex;
+}
+
+.mobile-btn {
+    display: none;
+}
+
+
+@media (max-width:1800px) {
+
+    nav {
+        padding: 0 40px;
+    }
+
+    nav ul {
+        margin-left: 60px;
+    }
+
+    .items {
+        gap: 28px;
+    }
+
+    .appointment-details {
+        width: 90%;
+        margin: 30px auto;
+        gap: 80px;
+    }
+
+    .book-col input,
+    textarea {
+        width: 32vw;
+    }
+
+    .book-row select,
+    .select-box input {
+        width: 15vw;
+    }
+
+    .fifth-section {
+        margin-right: 80px;
+    }
+}
+
+
+@media (max-width:1200px) {
+
+    nav {
+        padding: 0 25px;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+    .desktop-btn {
+        display: none;
+    }
+
+    .mobile-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .mobile-btn a{
+        /* display: inline-block; */
+        width: 120px;
+    }
+
+    nav ul {
+        margin-left: 0;
+    }
+
+    .items {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px;
+        transition: .4s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    }
+
+
+
+    .items.show {
+        left: 0;
+    }
+
+    .book-head {
+        margin-left: 0;
+    }
+
+    .appointment-details {
+        width: 95%;
+        margin: 30px auto;
+        gap: 40px;
+    }
+
+    .book-col input,
+    textarea {
+        width: 38vw;
+    }
+
+    .book-row select,
+    .select-box input {
+        width: 18vw;
+    }
+
+    .sidebar {
+        width: 320px;
+    }
+
+    .graph {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .graph-box {
+        border: none;
+    }
+
+    .foot-container {
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .fifth-section {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width:991px) {
+
+    .logo img {
+        width: 200px;
+        height: 50px;
+    }
+
+    .book-head h1 {
+        font-size: 34px;
+    }
+
+    .appointment-details {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px;
+    }
+
+    .left-book-form {
+        margin-left: 0;
+    }
+
+    .book-col input,
+    textarea {
+        width: 100%;
+    }
+
+    .book-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .book-row select,
+    .select-box input {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .graph {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .copyright {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+
+
+@media (max-width:767px) {
+
+    nav {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+    .desktop-btn {
+        display: none;
+    }
+
+    .mobile-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .logo img {
+        width: 170px;
+        height: 45px;
+    }
+
+    .book-head h1 {
+        font-size: 28px;
+    }
+
+    .book-head p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .appointment-details {
+        padding: 20px;
+    }
+
+    .left-book-form h1 {
+        font-size: 25px;
+    }
+
+    .doctor-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .graph {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-box {
+        justify-content: flex-start;
+        border: none;
+        padding-left: 20px;
+    }
+
+    .foot-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .first-section p,
+    .social-ico {
+        margin-left: 0;
+    }
+}
+
+
+
+@media (max-width:575px) {
+
+    nav {
+        padding: 0 15px;
+    }
+
+    .menu-btn {
+        font-size: 24px;
+    }
+
+    .book-head h1 {
+        font-size: 24px;
+    }
+
+    .book-head p {
+        font-size: 14px;
+    }
+
+    .appointment-details {
+        width: 96%;
+        padding: 15px;
+    }
+
+    .left-book-form h1 {
+        font-size: 22px;
+        margin-left: 18px;
+    }
+
+    .fa-calendar-days {
+        font-size: 22px;
+        left: -8px;
+    }
+
+    .book-col input,
+    textarea,
+    .book-row select,
+    .select-box input {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .doctor-card h3 {
+        font-size: 22px;
+    }
+
+    .summary h2,
+    .doctor-card h2 {
+        font-size: 22px;
+    }
+
+    .total {
+        font-size: 18px;
+    }
+
+    .graph-box h2 {
+        font-size: 28px;
+    }
+
+    .graph-box p {
+        font-size: 14px;
+    }
+
+    .first-section img {
+        width: 200px;
+        margin: auto;
+    }
+
+    .copyright {
+        font-size: 14px;
+        padding: 15px;
+    }
+}

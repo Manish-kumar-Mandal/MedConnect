@@ -1,0 +1,305 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact_us_page|MedConnect</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="icon" href="{% static 'images/iconpng.png' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body class="main">
+    <nav>
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+
+        <!-- Hamburger -->
+        <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="items" id="navMenu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'home' %}#About">About</a></li>
+            <li><a class="active" href="#">Contact</a></li>
+
+            <div class="buttons mobile-btn">
+                <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+                <a href="{% url 'logout' %}" class="login">Log out </a>
+            </div>
+        </ul>
+
+        <div class="buttons desktop-btn">
+            <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+            <a href="{% url 'logout' %}" class="login">Log out </a>
+        </div>
+
+    </nav>
+
+<!-- sucess popup showing  -->
+
+    {% if messages %}
+    <div id="popup" class="popup">
+        <div class="popup-content">
+
+            <div class="popup-header">
+                <span class="icon">✓</span>
+                <span class="close" onclick="closePopup()">&times;</span>
+            </div>
+
+            {% for message in messages %}
+            <h2>{{ message }}</h2>
+            {% endfor %}
+
+            <button onclick="closePopup()">OK</button>
+
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+    <section class="banner">
+        <div class="contact-heading" data-aos="fade-down">
+            <h1>Contact <span>us</span></h1>
+            <div class="cnt-linem">
+
+                <div class="cnt-line"></div>
+                <i class="fa-solid fa-heart-pulse"></i>
+                <div class="cnt-line"></div>
+            </div>
+            <p>We are here to help you.Reach out to us for any <br> queries,Support or assistance.</p>
+        </div>
+
+    </section>
+
+
+
+    <section class="body">
+
+        <div class="contact-left" data-aos="fade-up">
+            <h2>Get in Touch</h2>
+            <p>Fill out the form and our team will get back to you as soon as possible</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="name" placeholder="Your Name">
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Your Email">
+                </div>
+
+                <i class="fa-solid ico fa-phone"></i>
+                <input type="number" name="phone" placeholder="Phone Number">
+
+                <i class="fa-solid ico fa-book"></i>
+                <input type="text" name="subject" placeholder="Subject">
+
+                <i class="fa-solid ico fa-bullseye"></i>
+                <textarea name="message" placeholder="Your Message"></textarea>
+
+                <button type="submit"> Send Message</button>
+
+            </form>
+        </div>
+
+
+        <div class="contact-right" data-aos="fade-up">
+
+            <h2>Contact Information</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>123 Health Street, Medical District,
+                            Benda, 832101
+                            India</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="contacts-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <h4>Phone Number</h4>
+                        <p>+91 9508361623
+                            <br>+91 9932192134
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>info@medconnect.com
+                            support@medconnect.com</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="contact-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Sat : 9:00 AM - 8:00 PM
+                            Sunday : 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="map">
+                <iframe
+                    src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7385.527286864266!2d86.69637999999999!3d22.24904485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d965428220da1%3A0x47be0b4f9299936c!2sBenda%2C%20Jharkhand%20832101!5e0!3m2!1sen!2sin!4v1783193748833!5m2!1sen!2sin"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- footer section  -->
+
+    <footer id="contact">
+        <div class="foot-container">
+            <div class="first-section">
+                <img src="{% static 'images/logotrns.png' %}" alt="logo">
+                <p>Your trusted online healthcare platform , <br> We connect you with the best doctors and care.</p>
+                <div class="social-ico">
+
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"> </a></i>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></a></i>
+                    <a href="https://www.twitter.com/" target="_blank"> <i class="fa-brands fa-twitter"></a></i>
+                    <a href="https://www.linkedin.com/in/manish-kumar-mandal-76437239b/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></a></i>
+                </div>
+            </div>
+
+            <div class="second-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="##">Home</a></li>
+                    <li><a href="##">About us</a></li>
+                    <li><a href="##">Doctors</a></li>
+                    <li><a href="##">services</a></li>
+                    <li><a href="##">contact</a></li>
+                </ul>
+            </div>
+
+            <div class="third-section">
+                <h3>For Patients</h3>
+                <ul>
+                    <li>Book Appointment</li>
+                    <li>Find Doctors</li>
+                    <li>My Appointments</li>
+                    <li>Prescriptions</li>
+                    <li>Health Blog</li>
+                </ul>
+            </div>
+
+            <div class="fourth-section">
+                <h3>For Doctors</h3>
+                <ul>
+                    <li>Doctors Dashboard</li>
+                    <li>Appointment Requests</li>
+                    <li>Patients</li>
+                    <li>Profile</li>
+                    <li>Resources</li>
+                </ul>
+            </div>
+
+            <div class="fifth-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li> <i class="fa-solid fa-phone"> </i> +91 9508361623</li>
+                    <li> <i class="fa-solid fa-envelope"></i> medconnect2026@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 123, New building , India</li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>&copy; 2026 MedConnect. All Rights Reserved.</p>
+
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120
+        });
+    </script>
+
+<!-- navbar js mobileview  -->
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.onclick = () => {
+            navMenu.classList.toggle("show");
+        };
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+            link.onclick = () => {
+                navMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+<!-- popup js  -->
+
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

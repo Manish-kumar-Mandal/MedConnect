@@ -1,0 +1,172 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password | MedConnect</title>
+
+    <link rel="icon" href="{% static 'images/iconpng.png' %}">
+    <link rel="stylesheet" href="{% static 'css/forgot.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <nav>
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+
+        <div class="buttons">
+            <a href="{% url 'login' %}" class="login">Login</a>
+            <a href="{% url 'register' %}" class="register">Register</a>
+        </div>
+
+    </nav>
+
+
+    <div class="form-container">
+
+
+        <div class="left">
+
+            <form>
+
+                <div class="heading" <h3>Forgot Password?</h3>
+                    <span>Reset Your Password</span>
+                    <p>
+                        Enter your registered email address and we'll
+                        send you a password reset link.
+                    </p>
+
+                </div>
+
+                <div class="inputbox">
+
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Enter your Email Address" required>
+                </div>
+
+                <button class="reset-btn" type="submit">
+                    Send Reset Link
+                </button>
+
+                <div class="divider">
+
+                    <span>OR</span>
+
+                </div>
+                <a href="{% url 'login' %}" class="back-login">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Login
+                </a>
+            </form>
+        </div>
+
+
+        <div class="right">
+
+                <img src="{% static 'images/logindoctor.png' %}" alt="Doctor">
+
+            <div class="card card1">
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <div>
+                    <h3>Secure Reset</h3>
+                    <p>Your account stays protected.</p>
+
+                </div>
+            </div>
+
+            <div class="card card2">
+
+                <i class="fa-solid fa-envelope-circle-check"></i>
+                <div>
+                    <h3>Email Verification</h3>
+                    <p>Reset link delivered instantly.</p>
+
+                </div>
+
+            </div>
+
+            <div class="card card3">
+                <i class="fa-solid fa-lock"></i>
+                <div>
+                    <h3>Strong Security</h3>
+                    <p>Only you can change your password.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer section  -->
+
+
+    <footer>
+
+        <div class="foot-container">
+            <div class="first-section">
+                <img src="{% static 'images/logotrns.png' %}" alt="logo">
+
+                <p>
+                    Your trusted online healthcare platform.<br>
+                    We connect you with the best doctors and care.
+                </p>
+                <div class="social-ico">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/manish-kumar-mandal-76437239b/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></a></i>
+                </div>
+            </div>
+            <div class="second-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="##">Home</a></li>
+                    <li><a href="##">About</a></li>
+                    <li><a href="##">Services</a></li>
+                    <li><a href="##">Contact</a></li>
+                </ul>
+            </div>
+            <div class="third-section">
+                <h3>For Patients</h3>
+                <ul>
+                    <li>Book Appointment</li>
+                    <li>Find Doctors</li>
+                    <li>Health Blog</li>
+                    <li>My Appointments</li>
+
+                </ul>
+            </div>
+            <div class="fourth-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> +91 9508361623</li>
+                    <li><i class="fa-solid fa-envelope"></i> medconnect2026@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 123, New Building, India</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© 2026 MedConnect. All Rights Reserved.</p>
+
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,603 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Doctors|MedConnect</title>
+    <link rel="stylesheet" href="{% static 'css/all-doctor.css' %}">
+    <link rel="icon" href="{% static 'images/iconpng.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+
+</head>
+
+<body class="all-doc-body">
+    <nav>
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+
+        <!-- Hamburger -->
+        <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="items" id="navMenu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a class="active" href="#">Doctors</a></li>
+            <li><a href="{% url 'home' %}#About">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+            <div class="buttons mobile-btn">
+                    <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+                <a href="{% url 'logout' %}" class="login">Log out </a>
+            </div>
+        </ul>
+
+        <div class="buttons desktop-btn">
+                <p class="welcome">Welcome | {{ request.user.username }} ✅ </p>
+                <a href="{% url 'logout' %}" class="login">Log out </a>
+        </div>
+
+    </nav>
+
+    <section class="filters" data-aos="zoom-in">
+        <div class="filters-item">
+            <div class="searchbox">
+                <form>
+                    <input type="text" name="search" placeholder="Search doctors by name or speciality...." required>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+            <div class="selectbox">
+
+                <select name="speciality">
+                    <option value="#">All Specialities</option>
+                    <option value="#">Cardiologist</option>
+                    <option value="#">Dermatologist</option>
+                    <option value="#">General Physician</option>
+                    <option value="#">Pediatrician</option>
+                    <option value="#">Orthopedic Surgeon</option>
+                    <option value="#">Neurologist</option>
+                    <option value="#">General Physician</option>
+                    <option value="#">Dentist</option>
+                </select>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <div class="selectbox">
+
+                <select name="Experience">
+                    <option value="#">All Experience</option>
+                    <option value="#">10+ Years Exp..</option>
+                    <option value="#">9+ Years Exp..</option>
+                    <option value="#">8+ Years Exp..</option>
+                    <option value="#">7+ Years Exp..</option>
+                    <option value="#">6+ Years Exp..</option>
+                    <option value="#">5+ Years Exp..</option>
+                </select>
+
+
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <button>Search</button>
+        </div>
+        </form>
+    </section>
+
+    <!-- Doctor section  -->
+
+    <section class="top-doctors">
+
+        <div class="doctor-container" data-aos="fade-up">
+            
+            <div class="doctor-card" >
+                <img src="{% static 'images/doctor1.png' %}" alt="1">
+
+                <div class="doctor-info">
+                    <h3>Dr. Rahul Sharma</h3>
+                    <p class="speciality">Cardiologist</p>
+
+                    <p class="rating">⭐ 4.8
+                        <span>(120 reviews)</span>
+                    </p>
+
+                    <p>10+ Years Exp.</p>
+
+                    <h4>₹500 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor2.png' %}" alt="2">
+
+                <div class="doctor-info">
+                    <h3>Dr. Priya Mehta</h3>
+                    <p class="speciality">Dermatologist</p>
+
+                    <p class="rating">⭐ 4.7
+                        <span>(98 reviews)</span>
+                    </p>
+
+                    <p>8+ Years Exp.</p>
+
+                    <h4>₹400 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor3.png' %}" alt="3">
+
+                <div class="doctor-info">
+                    <h3>Dr. Arjun Verma</h3>
+                    <p class="speciality">General Physician</p>
+
+                    <p class="rating">⭐ 4.6
+                        <span>(150 reviews)</span>
+                    </p>
+
+                    <p>6+ Years Exp.</p>
+
+                    <h4>₹300 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor4.png' %}" alt="4">
+
+                <div class="doctor-info">
+                    <h3>Dr. Neha Kapoor</h3>
+                    <p class="speciality">Pediatrician</p>
+
+                    <p class="rating">⭐ 4.9
+                        <span>(110 reviews)</span>
+                    </p>
+
+                    <p>9+ Years Exp.</p>
+
+                    <h4>₹450 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor5.png' %}" alt="5">
+
+                <div class="doctor-info">
+                    <h3>Dr. Pooja Singh</h3>
+                    <p class="speciality">Gynecologist</p>
+
+                    <p class="rating">⭐ 4.2
+                        <span>(105 reviews)</span>
+                    </p>
+
+                    <p>7+ Years Exp.</p>
+
+                    <h4>₹300 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor6.png' %}" alt="6">
+
+                <div class="doctor-info">
+                    <h3>Dr. Vikram Gupta</h3>
+                    <p class="speciality">Orthopedic Surgeon</p>
+
+                    <p class="rating">⭐ 4.6
+                        <span>(119 reviews)</span>
+                    </p>
+
+                    <p>8+ Years Exp.</p>
+
+                    <h4>₹400 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor7.png' %}" alt="7">
+
+                <div class="doctor-info">
+                    <h3>Dr. Rohan Verma</h3>
+                    <p class="speciality">Neurologist</p>
+
+                    <p class="rating">⭐ 4.7
+                        <span>(98 reviews)</span>
+                    </p>
+
+                    <p>5+ Years Exp.</p>
+
+                    <h4>₹270 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor8.png' %}" alt="8">
+
+                <div class="doctor-info">
+                    <h3>Dr. Sneha Iyer</h3>
+                    <p class="speciality">General Physician</p>
+
+                    <p class="rating">⭐ 4.4
+                        <span>(101 reviews)</span>
+                    </p>
+
+                    <p>7+ Years Exp.</p>
+
+                    <h4>₹400 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor9.png' %}" alt="9">
+
+                <div class="doctor-info">
+                    <h3>Dr. Rohit Bansal</h3>
+                    <p class="speciality">Dentist</p>
+
+                    <p class="rating">⭐ 4.0
+                        <span>(110 reviews)</span>
+                    </p>
+
+                    <p>8+ Years Exp.</p>
+
+                    <h4>₹400 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor10.png' %}" alt="10">
+
+                <div class="doctor-info">
+                    <h3>Dr. Deepika Roy</h3>
+                    <p class="speciality">Cardiologist</p>
+
+                    <p class="rating">⭐ 4.7
+                        <span>(111 reviews)</span>
+                    </p>
+
+                    <p>8+ Years Exp.</p>
+
+                    <h4>₹450 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor11.png' %}" alt="11">
+
+                <div class="doctor-info">
+                    <h3>Dr. Harsh Verma</h3>
+                    <p class="speciality">Dermatologist</p>
+
+                    <p class="rating">⭐ 4.8
+                        <span>(112 reviews)</span>
+                    </p>
+
+                    <p>7+ Years Exp.</p>
+
+                    <h4>₹400 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="{% static 'images/doctor12.png' %}" alt="12">
+
+                <div class="doctor-info">
+                    <h3>Dr. Savita Kumari</h3>
+                    <p class="speciality">Gynecologist</p>
+
+                    <p class="rating">⭐ 4.8
+                        <span>(107 reviews)</span>
+                    </p>
+
+                    <p>8+ Years Exp.</p>
+
+                    <h4>₹430 Consultation</h4>
+
+                    <a href="{% url 'doctorprofile' %}"><button>View Profile</button></a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Graph section  -->
+
+    <section class="graph" data-aos="fade-in">
+
+        <div class="graph-box">
+            <i class="fa-solid fa-users"></i>
+            <div>
+                <h2>10,000+</h2>
+                <p>Happy Patients</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-user-doctor"></i>
+            <div>
+                <h2>500+</h2>
+                <p>Expert Doctors</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div>
+                <h2>50+</h2>
+                <p>Specializations</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-headset"></i>
+            <div>
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+        </div>
+
+    </section>
+    </main>
+
+
+
+    <!-- PATIENT REVIEW SECTION  -->
+
+    <section class="patient-reviews">
+
+        <h2 class="reviews-title">Patient Reviews</h2>
+
+        <div class="reviews-container" >
+
+            <div class="rating-summary" data-aos="fade-up">
+
+                <div class="main-rating">
+                    <span class="rating-number">4.8</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+
+                <p class="review-count">Based on 128 reviews</p>
+
+                <div class="rating-row">
+                    <span>5 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill five"></div>
+                    </div>
+                    <span>96</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>4 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill four"></div>
+                    </div>
+                    <span>21</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>3 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill three"></div>
+                    </div>
+                    <span>7</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>2 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill two"></div>
+                    </div>
+                    <span>2</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>1 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill one"></div>
+                    </div>
+                    <span>2</span>
+                </div>
+
+            </div>
+
+
+            <div class="review-cards" data-aos="fade-up">
+
+                <div class="review-card">
+
+                    <div class="review-user">
+                        <img src="{% static 'images/patient2.jpg' %}" alt="Rohit Sharma">
+
+                        <div>
+                            <h3>Rohit Sharma</h3>
+                            <div class="user-stars">★★★★★</div>
+                            <p>2 days ago</p>
+                        </div>
+                    </div>
+
+                    <p class="review-text">
+                        Very good experience with Dr. Arjun Mehta.
+                        He listens patiently and explains everything in detail.
+                    </p>
+
+                </div>
+
+
+                <div class="review-card">
+
+                    <div class="review-user">
+                        <img src="{% static 'images/patient.jpg' %}" alt="Anita Verma">
+
+                        <div>
+                            <h3>Anita Verma</h3>
+                            <div class="user-stars">★★★★★</div>
+                            <p>1 week ago</p>
+                        </div>
+                    </div>
+
+                    <p class="review-text">
+                        Excellent doctor! Very professional and friendly.
+                        The treatment was very effective.
+                    </p>
+
+                </div>
+
+
+                <div class="review-card">
+
+                    <div class="review-user">
+                        <img src="{% static 'images/patient3.png' %}" alt="Sandeep Kumar">
+
+                        <div>
+                            <h3>Sandeep Kumar</h3>
+                            <div class="user-stars">★★★★★</div>
+                            <p>2 weeks ago</p>
+                        </div>
+                    </div>
+
+                    <p class="review-text">
+                        Highly recommended for heart related issues.
+                        Great experience!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- footer section  -->
+
+    <footer id="contact">
+        <div class="foot-container">
+            <div class="first-section">
+                <img src="{% static 'images/logotrns.png' %}" alt="logo">
+                <p>Your trusted online healthcare platform , <br> We connect you with the best doctors and care.</p>
+                <div class="social-ico">
+
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"> </a></i>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></a></i>
+                    <a href="https://www.twitter.com/" target="_blank"> <i class="fa-brands fa-twitter"></a></i>
+                    <a href="https://www.linkedin.com/in/manish-kumar-mandal-76437239b/" target="_blank"><i class="fa-brands fa-linkedin"></a></i>
+                </div>
+            </div>
+
+            <div class="second-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#About">About us</a></li>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="index.html#services">services</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </div>
+
+            <div class="third-section">
+                <h3>For Patients</h3>
+                <ul>
+                    <li>Book Appointment</li>
+                    <li>Find Doctors</li>
+                    <li>My Appointments</li>
+                    <li>Prescriptions</li>
+                    <li>Health Blog</li>
+                </ul>
+            </div>
+
+            <div class="fourth-section">
+                <h3>For Doctors</h3>
+                <ul>
+                    <li>Doctors Dashboard</li>
+                    <li>Appointment Requests</li>
+                    <li>Patients</li>
+                    <li>Profile</li>
+                    <li>Resources</li>
+                </ul>
+            </div>
+
+            <div class="fifth-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li> <i class="fa-solid fa-phone"> </i> +91 9508361623</li>
+                    <li> <i class="fa-solid fa-envelope"></i> medconnect2026@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 123, New building , India</li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>&copy; 2026 MedConnect. All Rights Reserved.</p>
+
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120
+        });
+    </script>
+    
+<!-- navbar js mobileview  -->
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.onclick = () => {
+            navMenu.classList.toggle("show");
+        };
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+            link.onclick = () => {
+                navMenu.classList.remove("show");
+            }
+        });
+    </script>
+</body>
+
+</html>

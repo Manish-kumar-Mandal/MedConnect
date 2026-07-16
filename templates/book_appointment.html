@@ -1,0 +1,436 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Appointment|MedConnect</title>
+    <link rel="stylesheet" href="{% static 'css/book_appointment.css' %}">
+    <link rel="icon" href="{% static 'images/iconpng.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body>
+    <nav>
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+
+        <!-- Hamburger -->
+        <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="items" id="navMenu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'home' %}#About">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+            <div class="buttons mobile-btn">
+                <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+                <a href="{% url 'logout' %}" class="login">Log out </a>
+            </div>
+        </ul>
+
+        <div class="buttons desktop-btn">
+            <p class="welcome">Welcome | {{ request.user.username }} ✅</p>
+            <a href="{% url 'logout' %}" class="login">Log out </a>
+        </div>
+
+    </nav>
+
+    <!-- Sucess popup showing  -->
+
+    {% if messages %}
+    <div id="popup" class="popup">
+        <div class="popup-content">
+
+            <div class="popup-header">
+                <span class="icon">✓</span>
+                <span class="close" onclick="closePopup()">&times;</span>
+            </div>
+
+            {% for message in messages %}
+            <h2>{{ message }}</h2>
+            {% endfor %}
+
+            <button onclick="closePopup()">OK</button>
+
+        </div>
+    </div>
+    {% endif %}
+
+
+    <!-- Doctor Appointment section  -->
+
+
+    <div class="book-head" data-aos="fade-down">
+        <h1>Book Appointment</h1>
+        <p>Fill the details to book an appointment with your preferred doctor.</p>
+    </div>
+
+    <section class="appointment-details" data-aos="fade-up">
+        <div class="left-book-form">
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h1>Appointment Details</h1>
+            <p class="appo-line"></p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="book-col">
+                    <label> Full Name</label>
+                    <div class="input-box">
+                        <i class="fa-regular  ico fa-user"></i>
+
+                        <input type="text" name="full_name" placeholder="Enter your name" required>
+                    </div>
+
+                    <label> Email Address</label>
+                    <div class="input-box">
+                        <i class="fa-regular ico  fa-envelope"></i>
+
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <label> Phone Number</label>
+                    <div class="input-box">
+                        <i class="fa-solid  ico fa-phone"></i>
+
+                        <input type="number" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                </div>
+
+                <div class="book-row">
+
+                    <div class="select-box">
+                        <div class="input-box">
+
+                            <label> Select Department</label>
+                            <i class="fa-solid arrow fa-angle-down"></i>
+
+                            <select name="department">
+                                <option value=" ">Select Department</option>
+                                <option value="Cardiologist">Cardiologist</option>
+                                <option value="Dermatologist">Dermatologist</option>
+                                <option value="General Physician">General Physician</option>
+                                <option value="Pediatrician">Pediatrician</option>
+                                <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+                                <option value="Neurologist">Neurologist</option>
+                                <option value="General Physician">General Physician</option>
+                                <option value="Dentist">Dentist</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="select-box">
+                        <div class="input-box">
+
+                            <label> Select Doctor</label>
+                            <i class="fa-solid arrow fa-angle-down"></i>
+
+                            <select name="doctor">
+                                <option value=" ">Select Doctor</option>
+                                <option value="Dr. Rahul Sharma">Dr. Rahul Sharma</option>
+                                <option value="Dr. Priya Mehta">Dr. Priya Mehta</option>
+                                <option value="Dr. Arjun Verma">Dr. Arjun Verma</option>
+                                <option value="Dr. Neha Kapoor">Dr. Neha Kapoor</option>
+                                <option value="Dr. Pooja Singh">Dr. Pooja Singh</option>
+                                <option value="Dr. Vikram Gupta">Dr. Vikram Gupta</option>
+                                <option value="Dr. Rohan Verma">Dr. Rohan Verma</option>
+                                <option value="Dr. Sneha Iyer">Dr. Sneha Iyer</option>
+                                <option value="Dr. Rohit Bansal">Dr. Rohit Bansal</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="book-row">
+
+                    <div class="select-box">
+
+                        <label> Appointment Date</label>
+                        <div class="input-box">
+                            <input type="date" name="appointment_date" required>
+                        </div>
+                    </div>
+
+                    <div class="select-box">
+                        <div class="input-box">
+                            <label>Choose Time</label>
+                            <input type="time" name="appointment_time" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid  shield fa-shield-heart"></i>
+                    <label> Reason for visit</label>
+
+                    <textarea name="reason" placeholder="Write the reason for your visit..."></textarea>
+                </div>
+
+                <div class="button">
+
+                    <button type="submit"> Confirm Appointment</button>
+
+                </div>
+                <div class="note-box">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <div>
+                        <h3>Note:</h3>
+                        <span>Please arrive 15 minutes before your appointment time.</span>
+                    </div>
+
+                </div>
+        </div>
+
+        </form>
+
+
+        <div class="sidebar">
+
+            <div class="doctor-card">
+
+                <h2>
+                    <i class="fa-regular fa-user"></i>
+                    Doctor Information
+                </h2>
+
+                <img src="{% static 'images/blankprofile.png' %}" alt="doctor">
+
+                <h3>---/---</h3>
+
+                <span>----/--</span>
+
+                <p><i class="fa-regular fa-user"></i> -- Years Experience</p>
+
+                <p><i class="fa-solid fa-location-dot"></i> MedConnect Hospital </p>
+
+            </div>
+
+            <div class="summary">
+
+                <h2>
+                    <i class="fa-regular fa-clipboard"></i>
+                    Appointment Summary
+                </h2>
+
+                <div class="item">
+                    <span>Department</span>
+                    <span>--/--</span>
+                </div>
+
+                <div class="item">
+                    <span>Date</span>
+                    <span>--/--/----</span>
+                </div>
+
+                <div class="item">
+                    <span>Time</span>
+                    <span>--:--</span>
+                </div>
+
+                <div class="item">
+                    <span>Consultation Fee</span>
+                    <span>₹---</span>
+                </div>
+
+                <hr>
+
+                <div class="total">
+
+                    <span>Total Amount</span>
+
+                    <span>₹---</span>
+
+                </div>
+
+            </div>
+
+            <div class="safe-box">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <h4>Your information is safe</h4>
+
+                    <p>We use secure encryption to protect your data.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Graph section  -->
+
+    <section class="graph" data-aos="fade-in">
+
+        <div class="graph-box">
+            <i class="fa-solid fa-users"></i>
+            <div>
+                <h2>5,000+</h2>
+                <p>Happy Patients</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-heart"></i>
+            <div>
+                <h2>500+</h2>
+                <p>Reviews & Feedback</p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div>
+                <h2>250+</h2>
+                <p> Achievements </p>
+            </div>
+        </div>
+
+        <div class="graph-box">
+            <i class="fa-solid fa-headset"></i>
+            <div>
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- footer section  -->
+
+    <footer id="contact">
+        <div class="foot-container">
+            <div class="first-section">
+                <img src="{% static 'images/logotrns.png' %}" alt="logo">
+                <p>Your trusted online healthcare platform , <br> We connect you with the best doctors and care.</p>
+                <div class="social-ico">
+
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"> </a></i>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></a></i>
+                    <a href="https://www.twitter.com/" target="_blank"> <i class="fa-brands fa-twitter"></a></i>
+                    <a href="https://www.linkedin.com/in/manish-kumar-mandal-76437239b/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></a></i>
+                </div>
+            </div>
+
+            <div class="second-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="##">Home</a></li>
+                    <li><a href="##">About us</a></li>
+                    <li><a href="##">Doctors</a></li>
+                    <li><a href="##">services</a></li>
+                    <li><a href="##">contact</a></li>
+                </ul>
+            </div>
+
+            <div class="third-section">
+                <h3>For Patients</h3>
+                <ul>
+                    <li>Book Appointment</li>
+                    <li>Find Doctors</li>
+                    <li>My Appointments</li>
+                    <li>Prescriptions</li>
+                    <li>Health Blog</li>
+                </ul>
+            </div>
+
+            <div class="fourth-section">
+                <h3>For Doctors</h3>
+                <ul>
+                    <li>Doctors Dashboard</li>
+                    <li>Appointment Requests</li>
+                    <li>Patients</li>
+                    <li>Profile</li>
+                    <li>Resources</li>
+                </ul>
+            </div>
+
+            <div class="fifth-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li> <i class="fa-solid fa-phone"> </i> +91 9508361623</li>
+                    <li> <i class="fa-solid fa-envelope"></i> medconnect2026@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> 123, New building , India</li>
+
+                </ul>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>&copy; 2026 MedConnect. All Rights Reserved.</p>
+
+            <p>Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120
+        });
+    </script>
+
+    <!-- navbar js mobileview -->
+     
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        menuBtn.onclick = () => {
+            navMenu.classList.toggle("show");
+        };
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+            link.onclick = () => {
+                navMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+    <!-- popup js -->
+
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
